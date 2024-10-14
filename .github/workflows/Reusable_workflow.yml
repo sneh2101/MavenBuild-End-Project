@@ -3,3 +3,4 @@ on: push
 jobs:
   callCICD:
    uses: ./.github/workflows/main.yml
+   secrets: inherit
