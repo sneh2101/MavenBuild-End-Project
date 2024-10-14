@@ -1,7 +1,8 @@
 name: CICD with End project
-on: 
- workflow_call:
- workflow_dispatch:
+on:
+ push:
+  branches:
+   - master
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -14,6 +15,11 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: 'maven'
+    - name: Cache Maven Dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-cache
     - name: Install docker 
       uses: docker/setup-buildx-action@v3
     - name: build the code
