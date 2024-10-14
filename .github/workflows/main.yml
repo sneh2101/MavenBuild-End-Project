@@ -1,5 +1,7 @@
 name: CICD with End project
-on: workflow_call
+on: 
+ workflow_call:
+ workflow_dispatch:
 jobs:
   deploy:
     runs-on: ubuntu-latest
