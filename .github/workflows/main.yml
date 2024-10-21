@@ -1,4 +1,4 @@
-name: CICD with End project- Sneh
+name: CICD with End project v2.0
 on: workflow_call
 jobs:
   deploy:
